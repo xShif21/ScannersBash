@@ -17,7 +17,7 @@ function ctrl_c (){
 trap ctrl_c INT
 
 #variables 
-host=127.0.0.1
+host=127.0.0.1 # change the host to scan what ever you want.
 
 echo -ne "\t${grayColour}Scanning all ports\n${endColour}"
 
@@ -26,10 +26,3 @@ for i in $(seq 1 65535); do
 (echo '' > /dev/tcp/$host/$i) 2>/dev/null && echo -e "${yellowColour}The port \"$i\" is open${endColour} "
 done
 tput cnorm
-
-
-
-#case
-
-
-#esac
